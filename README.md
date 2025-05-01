@@ -79,7 +79,11 @@ if __name__ == '__main__':
 # HTTP method are provided by Flask
 
 GET:	This is used to send the data in an without encryption of the form to the server.
+
 HEAD:	provides response body to the form
+
 POST:	Sends the form data to server. Data received by POST method is not cached by server.
+
 PUT:	Replaces current representation of target resource with URL.
+
 DELETE:	Deletes the target resource of a given URL
