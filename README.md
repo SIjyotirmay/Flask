@@ -87,3 +87,8 @@ POST:	Sends the form data to server. Data received by POST method is not cached 
 PUT:	Replaces current representation of target resource with URL.
 
 DELETE:	Deletes the target resource of a given URL
+
+
+# POST Method in Flask
+
+The POST method is used to send data to the server for processing. Unlike GET, it does not append data to the URL. Instead, it sends data in the request body, making it a better choice for sensitive or large data.
