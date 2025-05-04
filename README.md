@@ -109,3 +109,11 @@ def squarenumber():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+Explanation:
+
+Supports both GET and POST: The route now accepts both GET (to render the form) and POST (to process the input).
+Data is sent in the request body: Instead of request.args.get(‘num’), we use request.form.get(‘num’) to retrieve the number from the form.
+More secure: Since data is not appended to the URL, it is not visible in browser history or logs.
+Same logic for processing input: The app still checks if the number is provided, calculates its square, and renders the result using answer.html.
+

@@ -10,7 +10,7 @@ def squarenumber():
             return "<h1>Invalid number</h1>"
         square = int(num) ** 2
         return render_template('answer.html', squareofnum=square, num=num)
-    return render_template('squarenum.html')
+    return render_template('squarenum1.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
