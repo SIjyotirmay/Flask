@@ -117,3 +117,27 @@ Data is sent in the request body: Instead of request.args.get(‘num’), we use
 More secure: Since data is not appended to the URL, it is not visible in browser history or logs.
 Same logic for processing input: The app still checks if the number is provided, calculates its square, and renders the result using answer.html.
 
+# File-Uploading in Flask
+File Uploading in Flask needs an HTML form with enctype attribute and URL handler, that fetches file and saves the object to the desired location. Files are temporary stored on server and then on the desired location. The HTML Syntax that handle the uploading URL is :
+
+form action=”http://localhost:5000/uploader” method=”POST” enctype=”multipart/form-data”
+
+# code
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
+
+app = Flask(__name__)
+
+@app.route('/upload')
+def upload_file():
+    return render_template('upload.html')
+
+@app.route('/uploader', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+      f = request.files['file'] 
+      f.save(secure_filename(f.filename)) 
+      return 'file uploaded successfully'
+        
+if __name__ == '__main__': 
+    app.run(debug = True)
