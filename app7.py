@@ -2,6 +2,10 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Hi guys"
+
 @app.route('/square', methods=['GET', 'POST'])
 def squarenumber():
     if request.method == 'POST':
